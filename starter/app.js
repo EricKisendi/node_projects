@@ -4,7 +4,7 @@ const tasks = require('./routes/tasks.js')
 const connetDB = require('./db/connect.js')
 require('dotenv').config()
 //middleware
-
+//app.use(express.static('./public'))
 app.use(express.json())
 
 

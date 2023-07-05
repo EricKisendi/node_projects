@@ -5,7 +5,7 @@ const connetDB = require('./db/connect.js')
 require('dotenv').config()
 const errorHandlerMiddleware = require('./middleware/error.js')
 //middleware
-//app.use(express.static('./public'))
+app.use(express.static('./public'))
 app.use(express.json())
 
 
@@ -18,7 +18,7 @@ app.use('/api/v1/tasks', tasks)
 
 app.use(errorHandlerMiddleware)
 
-const port = 3000
+const port = process.env.PORT || 3000
 
 const start = async () => {
     try {
@@ -28,5 +28,4 @@ const start = async () => {
         console.log(error);
     }
 }
-
 start()
